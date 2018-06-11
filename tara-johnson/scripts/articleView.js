@@ -56,7 +56,7 @@ articleView.handleMainNav = () => {
 
   $('nav .tab:first').click();
 };
-// may need to add handlemainnewnav if we create that functionality
+// May eventually need to add handlemainnewnav if we create navigation functionality
 
 articleView.setTeasers = () => {
   $('.article-body *:nth-of-type(n+2)').hide();
@@ -76,14 +76,14 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE This 
+// PUT YOUR RESPONSE HERE This function is called in index.html and will be invoked when there are changes to any of the elements in the form. It has the event handler to update the preview and the export field.
 articleView.initNewArticlePage = () => {
 
   // DONE: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
 
   $('#article-json').on('focus', function(){
-    this.select(); // this is the object of the click
+    this.select(); // 'this' is the object of the click
   });
 
   // DONE: Add an event handler to update the preview and the export field if any inputs change.
@@ -111,13 +111,12 @@ articleView.create = () => {
   // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
   $('#articles').append(article.toHtml());
 
-  // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-
+  // DONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each(function (i, block) {
     hljs.highlightBlock(block);
   });
 
-  // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+  // DONE: Show our export field (it's not hidden b/c we haven't added any of the tab navigation), and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
   $('#article-json').val(JSON.stringify(article));
 };
 

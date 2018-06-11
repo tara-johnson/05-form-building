@@ -82,8 +82,6 @@
       <!-- NOTE: This is where we will display our article preview -->
     </section>
 
-    <pre><code class="html"> console.log.(whatever)</code></pre>
-
     <section id="article-export">
       <!-- DONE: Refer to the preview image to see what we will be building here: we need a container of some kind to hold a JSON export of our article. Ideally this container would show only a incipit (short preview) of the JSON and also be clickable to allow easy selection of the text it holds. What kind of element could we use for this? -->
       <label id="export-field" for="article-json" class="pull-right">
@@ -101,6 +99,8 @@
 
   <!-- NOTE (stretch goal): Include script tags for 3rd party libraries to enable Markdown rendering and code syntax highlighting. Use the minified CDN. Keep in mind that if we want these features to render properly on our main blog page (index.html) that we'll need to add those scripts over there, too. -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script 
+  src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <script src="scripts/blogArticles.js"></script>
   <script src="scripts/article.js"></script>
@@ -111,9 +111,8 @@
     //  Hint: Look in articleView.js for a function that does this.
     articleView.initNewArticlePage();
 
-
     // COMMENT: What is this function doing? Why do we need it?
-    // PUT YOUR RESPONSE HERE Need it to initialize the new article page. Look at video for hint. time 4:56pm
+    // PUT YOUR RESPONSE HERE: We need this function to initialize this new form page. The two event listeners we need (handler for the form and handler for a click on the export field) are inside of this function so we need it to turn on our event listeners.
   </script>
 </body>
 
